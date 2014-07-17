@@ -12,6 +12,24 @@ import com.jfinal.core.JFinal;
 import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.lnpdit.car.Car;
+import com.lnpdit.car.CarController;
+import com.lnpdit.equipment.Equipment;
+import com.lnpdit.equipment.EquipmentController;
+import com.lnpdit.equipmentpermission.EquipmentPermission;
+import com.lnpdit.equipmentpermission.EquipmentPermissionController;
+import com.lnpdit.failure.Failure;
+import com.lnpdit.failure.FailureController;
+import com.lnpdit.failurebank.FailureBank;
+import com.lnpdit.failurebank.FailureBankController;
+import com.lnpdit.maintenance.Maintenance;
+import com.lnpdit.maintenance.MaintenanceController;
+import com.lnpdit.maintenancetype.MaintenanceType;
+import com.lnpdit.maintenancetype.MaintenanceTypeController;
+import com.lnpdit.owner.Owner;
+import com.lnpdit.owner.OwnerController;
+import com.lnpdit.remind.Remind;
+import com.lnpdit.remind.RemindController;
 import com.lnpdit.user.User;
 import com.lnpdit.user.UserController;
 
@@ -36,6 +54,16 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/", CommonController.class);
 		me.add("/blog", BlogController.class);
 		me.add("/user", UserController.class);
+		me.add("/car",CarController.class);
+		me.add("/equipment",EquipmentController.class);
+		me.add("/equipmentpermission",EquipmentPermissionController.class);
+		me.add("/failure",FailureController.class);
+		me.add("/failurebank",FailureBankController.class);
+		me.add("/maintenance",MaintenanceController.class);
+		me.add("/maintenance",MaintenanceTypeController.class);
+		me.add("/owner",OwnerController.class);
+		me.add("/remid",RemindController.class);
+
 	}
 	
 	/**
@@ -51,6 +79,15 @@ public class DemoConfig extends JFinalConfig {
 		me.add(arp);
 		arp.addMapping("blog", Blog.class);	// 映射blog 表到 Blog模型
 		arp.addMapping("user", User.class);
+		arp.addMapping("car", Car.class);
+		arp.addMapping("equipment", Equipment.class);
+		arp.addMapping("equipmentpermission", EquipmentPermission.class);
+		arp.addMapping("failure", Failure.class);
+		arp.addMapping("failurebank", FailureBank.class);
+		arp.addMapping("maintenance", Maintenance.class);
+		arp.addMapping("maintenance", MaintenanceType.class);
+		arp.addMapping("owner", Owner.class);
+		arp.addMapping("remid", Remind.class);
 	}
 	
 	/**
